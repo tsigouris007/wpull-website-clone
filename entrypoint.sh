@@ -24,3 +24,9 @@ wpull "$WEBSITE" \
  --timeout $TIMEOUT \
  --output-file "$APP_DIR/$OUTPUT_FILE.log" \
  --warc-file "$APP_DIR/$OUTPUT_FILE.warc"
+
+if [[ ! -z "$SRV_PORT" ]]; then
+  cd $OUTPUT_FILE
+  echo "[+] Running webserver on port $SRV_PORT."
+  python -m http.server $SRV_PORT
+fi

@@ -7,6 +7,7 @@ ENV LEVEL "1"
 ENV TIMEOUT "120"
 ENV TRIES "3"
 ENV WEBSITE ""
+ENV SRV_PORT ""
 
 RUN apk update
 RUN apk add bash

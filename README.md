@@ -22,7 +22,7 @@ Additionally, a sniffing python script logs traffic and any login credentials ma
 ![ksnip_20211224-174250](https://user-images.githubusercontent.com/10864434/147363221-6f42fb91-da3b-4b12-8287-552afac651cd.png)
 
 ## Keep in mind
-After running files are created on your filesystem (wherever you specified them). Also when running the web server you need these files to serve your cloned website. This is best practice, but it works pretty well and does your trick. \
+After running files are created on your filesystem (wherever you specified them). Also when running the web server you need these files to serve your cloned website so you should not delete them. This is not best practice, but it works pretty well and does your trick. \
 Also cloning websites and tricking users into harvesting traffic or credentials is not legal and you should use only for educational purposes.
 ## Result
 This will produce a directory that includes all website specified cloned contents, a log file and a warc zipped file. \

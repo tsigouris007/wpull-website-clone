@@ -27,8 +27,8 @@ wpull "$WEBSITE" \
  --warc-file "$APP_DIR/$OUTPUT_FILE.warc"
 
 if [[ ! -z "$SRV_PORT" ]]; then
-  cd $OUTPUT_FILE
+  cd $APP_DIR
   echo "[+] Running webserver on port $SRV_PORT."
   php -S 0.0.0.0:$SRV_PORT -t . &
-  python $APP_DIR/credsniff_http.py
+  python $APP_DIR/credsniff_http.py -i $IFACE
 fi

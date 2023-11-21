@@ -1,4 +1,4 @@
-FROM python:3.9.10-alpine
+FROM python:3.5.10-alpine
 
 USER root
 
@@ -10,6 +10,7 @@ ENV TIMEOUT "120"
 ENV TRIES "3"
 ENV WEBSITE ""
 ENV SRV_PORT ""
+ENV IFACE="eth0"
 
 RUN apk update
 RUN apk add bash php7
